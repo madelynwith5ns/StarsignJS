@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo html {
+echo background-color: \#ff0000;
+echo }

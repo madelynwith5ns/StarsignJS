@@ -1,0 +1,9 @@
+{
+    "platforms": {
+        "linux": {
+            "compilers": {
+                "cpp": "c++"
+            }
+        }
+    }
+}
