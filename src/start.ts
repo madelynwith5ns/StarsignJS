@@ -1,6 +1,12 @@
 /* eslint-disable */
 
-import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import {
+    existsSync,
+    mkdirSync,
+    readdirSync,
+    rmSync,
+    writeFileSync,
+} from 'node:fs';
 import { $ } from 'bun';
 
 // eslint-ignore-next-line
