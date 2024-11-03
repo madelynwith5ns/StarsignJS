@@ -65,6 +65,9 @@ to present to you, The StarsignJS Stack:
 -   **Just as the other build system** We also used Just for some of the build
     stuff.
 
+-   **Make as the other other build system** We also used Make for some of the build stuff.
+-   **Shell Scripts as the other other other build system** We also use shell scripts for some other build stuff.
+
 ### Documentation?
 
 StarsignJS values minimalism. Documentation is an unncessary cluttering of the
