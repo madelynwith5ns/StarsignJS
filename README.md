@@ -49,9 +49,9 @@ to present to you, The StarsignJS Stack:
 -   **C++ to generate the HTML** We use a fast, high-performance language to
     generate the HTML to describe your websites.
 
--   **Rust for the frontend** We use a **blazingly fast** modern language that
-    can compile to web assembly for your frontend to ensure your users have nothing
-    but the blazingly fast experience they truly deserve.
+-   **WebFuck for the Frontend** We use a **blazingly fast** modern language that
+    to ensure that your users have the blazingly fast experience that they
+    webfucking deserve!
 
 -   **Bash to generate the CSS** We tried to stick as close to the source as
     possible, thats why we picked the closest thing we could get to the write-only

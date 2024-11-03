@@ -10,8 +10,7 @@ markupgen:
 bundle:
     rm -rf dist
     mkdir dist
-    cp -r frontend/ dist
-    rm dist/package.json
+    cp -r frontend/dist/* dist
 
 prettier:
     bun prettier . --write

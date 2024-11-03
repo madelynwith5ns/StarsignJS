@@ -4,6 +4,7 @@ import {
     existsSync,
     mkdirSync,
     readdirSync,
+    readFileSync,
     rmSync,
     writeFileSync,
 } from 'node:fs';
@@ -178,7 +179,28 @@ export class Server {
                 const url = new URL(req.url);
                 const path = url.pathname === '/' ? '/index' : url.pathname;
 
-                if (path.endsWith('.css')) {
+                const dirread = readdirSync('dist/', { recursive: true });
+                const dir = dirread.map((f) => {
+                    return '/' + f.toString();
+                });
+
+                if (dir.includes(path)) {
+                    return new Response(String(readFileSync(`dist${path}`)), {
+                        headers: {
+                            'Content-Type': path.endsWith('.js')
+                                ? 'text/javascript'
+                                : path.endsWith('.html')
+                                  ? 'text/html'
+                                  : path.endsWith('.css')
+                                    ? 'text/css'
+                                    : path.endsWith('.wf')
+                                      ? 'xd-nya~/webfuck'
+                                      : 'text/plain',
+
+                            Server: 'StarsignJS',
+                        },
+                    });
+                } else if (path.endsWith('.css')) {
                     for (let i = 0; i < server.cssgenerators.length; i++) {
                         if (
                             server.cssgenerators[i].getName() + '.css' !==

@@ -1,1 +1,4 @@
 build:
+    mkdir -p dist/webfucks/
+    cp -r webfuck/libwebfuck.js dist/
+    cp -r wfscripts/* dist/webfucks/

@@ -20,7 +20,7 @@ mkdirSync('pages-bin/');
 
 files.forEach((f) => {
     console.log(`[C++] ${f}`);
-    $`${compiler} -o pages-bin/${f.replace('.cpp', '.htmlgen')} pages-src/${f}`.then(
+    $`${compiler} -o pages-bin/${f.replace('.cpp', '.htmlgen')} pages-lib/webfuck.cpp pages-src/${f}`.then(
         (_o) => {},
     );
 });
