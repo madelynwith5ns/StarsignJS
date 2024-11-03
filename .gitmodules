@@ -1,0 +1,3 @@
+[submodule "frontend/webfuck"]
+	path = frontend/webfuck
+	url = git@github.com:madelynwith5ns/webfuck
