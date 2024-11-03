@@ -11,6 +11,14 @@ const config = JSON.parse(readFileSync('../starsignrc.json').toString());
 
 const compiler = config.platforms[process.platform].compilers.cpp;
 
+const libs = readdirSync('pages-lib/');
+let libsflags: string[] = [];
+libs.forEach((f) => {
+    if (f.endsWith('.cpp')) {
+        libsflags.push(`pages-lib/${f}`);
+    }
+});
+
 const files = readdirSync('pages-src/');
 
 if (existsSync('pages-bin/')) {
@@ -20,7 +28,7 @@ mkdirSync('pages-bin/');
 
 files.forEach((f) => {
     console.log(`[C++] ${f}`);
-    $`${compiler} -o pages-bin/${f.replace('.cpp', '.htmlgen')} pages-lib/webfuck.cpp pages-src/${f}`.then(
+    $`${compiler} -o pages-bin/${f.replace('.cpp', '.htmlgen')} -Ipages-lib/ ${libsflags} pages-src/${f}`.then(
         (_o) => {},
     );
 });
